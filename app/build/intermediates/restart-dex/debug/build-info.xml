@@ -5,29 +5,29 @@
     density="hdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="98429107311307"
+    timestamp="104178611642783"
     token="-977620448679206408"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1137" />
+        duration="173" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="198" />
+        duration="44" />
     <task
         name="verifier"
-        duration="20" />
+        duration="2" />
 
     <artifact
         location="/Users/nara007/AndroidStudioProjects/BluezIMETestApp/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="98429107311307"
+        timestamp="104178611642783"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/nara007/AndroidStudioProjects/BluezIMETestApp/app/build/outputs/apk/app-debug.apk"

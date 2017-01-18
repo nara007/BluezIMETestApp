@@ -90,43 +90,43 @@ public class TestActivity extends Activity {
 	public static final String SESSION_NAME = "TEST-BLUEZ-IME";
 	
 	//Data for drivers, used for Bluez-IME < 9
-	private String[] m_driver_names = {
-		"zeemote", 
-		"bgp100", 
-		"phonejoy",
-		"icontrolpad",
-		"wiimote",
-		"dump"
-	};
+//	private String[] m_driver_names = {
+//		"zeemote",
+//		"bgp100",
+//		"phonejoy",
+//		"icontrolpad",
+//		"wiimote",
+//		"dump"
+//	};
 	
-	public String[] m_driver_displaynames = {
-		"Zeemote JS1", 
-		"BGP100 Chainpus", 
-		"Phonejoy",
-		"iControlPad",
-		"Wiimote",
-		"Data dump"
-	};
+//	public String[] m_driver_displaynames = {
+//		"Zeemote JS1",
+//		"BGP100 Chainpus",
+//		"Phonejoy",
+//		"iControlPad",
+//		"Wiimote",
+//		"Data dump"
+//	};
 
 	
-	private TextView m_mac;
+//	private TextView m_mac;
 	private Spinner m_driver;
 	private String m_selectedDriver;
-	private ArrayAdapter<CharSequence> m_driverAdapter;
-	private TableLayout m_connectData;
+//	private ArrayAdapter<CharSequence> m_driverAdapter;
+//	private TableLayout m_connectData;
 	private Button m_button;
 	
-	private CheckBox m_checkA;
-	private CheckBox m_checkB;
-	private CheckBox m_checkC;
-	private CheckBox m_checkX;
-	private CheckBox m_checkY;
-	private CheckBox m_checkZ;
+//	private CheckBox m_checkA;
+//	private CheckBox m_checkB;
+//	private CheckBox m_checkC;
+//	private CheckBox m_checkX;
+//	private CheckBox m_checkY;
+//	private CheckBox m_checkZ;
 	
-	private SeekBar m_axisX1;
-	private SeekBar m_axisY1;
-	private SeekBar m_axisX2;
-	private SeekBar m_axisY2;
+//	private SeekBar m_axisX1;
+//	private SeekBar m_axisY1;
+//	private SeekBar m_axisX2;
+//	private SeekBar m_axisY2;
 	
 	private ListView m_logList;
 	private ArrayAdapter<String> m_logAdapter;
@@ -142,41 +142,42 @@ public class TestActivity extends Activity {
         setContentView(R.layout.main);
         
         m_button = (Button)findViewById(R.id.ConnectButton);
-        m_checkA = (CheckBox)findViewById(R.id.ButtonA);
-        m_checkB = (CheckBox)findViewById(R.id.ButtonB);
-        m_checkC = (CheckBox)findViewById(R.id.ButtonC);
-        m_checkX = (CheckBox)findViewById(R.id.ButtonX);
-        m_checkY = (CheckBox)findViewById(R.id.ButtonY);
-        m_checkZ = (CheckBox)findViewById(R.id.ButtonZ);
+//        m_checkA = (CheckBox)findViewById(R.id.ButtonA);
+//        m_checkB = (CheckBox)findViewById(R.id.ButtonB);
+//        m_checkC = (CheckBox)findViewById(R.id.ButtonC);
+//        m_checkX = (CheckBox)findViewById(R.id.ButtonX);
+//        m_checkY = (CheckBox)findViewById(R.id.ButtonY);
+//        m_checkZ = (CheckBox)findViewById(R.id.ButtonZ);
         
-        m_axisX1 = (SeekBar)findViewById(R.id.AxisX1);
-        m_axisY1 = (SeekBar)findViewById(R.id.AxisY1);
-        m_axisX2 = (SeekBar)findViewById(R.id.AxisX2);
-        m_axisY2 = (SeekBar)findViewById(R.id.AxisY2);
+//        m_axisX1 = (SeekBar)findViewById(R.id.AxisX1);
+//        m_axisY1 = (SeekBar)findViewById(R.id.AxisY1);
+//        m_axisX2 = (SeekBar)findViewById(R.id.AxisX2);
+//        m_axisY2 = (SeekBar)findViewById(R.id.AxisY2);
         
         m_logList = (ListView)findViewById(R.id.LogView);
         
-        m_connectData = (TableLayout)findViewById(R.id.ConnectionData);
-        m_mac = (TextView)findViewById(R.id.MACAddress);
-		m_mac.setText("00:1E:35:3B:DF:72");
-        m_driver = (Spinner)findViewById(R.id.DriverName);
-        m_driver.setOnItemSelectedListener(new OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-				m_selectedDriver = m_driver_names[pos];
-				m_selectedDriver = "wiimote";
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {
-			}
-		});
+//        m_connectData = (TableLayout)findViewById(R.id.ConnectionData);
+//        m_mac = (TextView)findViewById(R.id.MACAddress);
+//		m_mac.setText("00:1E:35:3B:DF:72");
+//        m_driver = (Spinner)findViewById(R.id.DriverName);
+		m_selectedDriver = "wiimote";
+//        m_driver.setOnItemSelectedListener(new OnItemSelectedListener() {
+//			@Override
+//			public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+////				m_selectedDriver = m_driver_names[pos];
+//				m_selectedDriver = "wiimote";
+//			}
+//
+//			@Override
+//			public void onNothingSelected(AdapterView<?> arg0) {
+//			}
+//		});
         
-        m_driverAdapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
-        m_driverAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        m_driver.setAdapter(m_driverAdapter);
+//        m_driverAdapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
+//        m_driverAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        m_driver.setAdapter(m_driverAdapter);
         
-        populateDriverBox(m_driver_names, m_driver_displaynames);
+//        populateDriverBox(m_driver_names, m_driver_displaynames);
         
         registerReceiver(stateCallback, new IntentFilter(EVENT_REPORT_CONFIG));
         registerReceiver(stateCallback, new IntentFilter(EVENT_REPORTSTATE));
@@ -187,12 +188,12 @@ public class TestActivity extends Activity {
         registerReceiver(statusMonitor, new IntentFilter(EVENT_DIRECTIONALCHANGE));
         registerReceiver(statusMonitor, new IntentFilter(EVENT_KEYPRESS));
         
-        m_buttonMap.put(KEYCODE_BUTTON_A, m_checkA);
-        m_buttonMap.put(KEYCODE_BUTTON_B, m_checkB);
-        m_buttonMap.put(KEYCODE_BUTTON_C, m_checkC);
-        m_buttonMap.put(KEYCODE_BUTTON_X, m_checkX);
-        m_buttonMap.put(KEYCODE_BUTTON_Y, m_checkY);
-        m_buttonMap.put(KEYCODE_BUTTON_Z, m_checkZ);
+//        m_buttonMap.put(KEYCODE_BUTTON_A, m_checkA);
+//        m_buttonMap.put(KEYCODE_BUTTON_B, m_checkB);
+//        m_buttonMap.put(KEYCODE_BUTTON_C, m_checkC);
+//        m_buttonMap.put(KEYCODE_BUTTON_X, m_checkX);
+//        m_buttonMap.put(KEYCODE_BUTTON_Y, m_checkY);
+//        m_buttonMap.put(KEYCODE_BUTTON_Z, m_checkZ);
         
         m_logAdapter = new ArrayAdapter<String>(this, R.layout.log_item, m_logText);
         m_logList.setAdapter(m_logAdapter);
@@ -209,7 +210,7 @@ public class TestActivity extends Activity {
 			        Intent serviceIntent = new Intent(REQUEST_CONNECT);
 			        serviceIntent.setClassName(BLUEZ_IME_PACKAGE, BLUEZ_IME_SERVICE);
 			        serviceIntent.putExtra(SESSION_ID, SESSION_NAME);
-			        serviceIntent.putExtra(REQUEST_CONNECT_ADDRESS, m_mac.getText().toString());
+			        serviceIntent.putExtra(REQUEST_CONNECT_ADDRESS, "00:1E:35:3B:DF:72");
 			        serviceIntent.putExtra(REQUEST_CONNECT_DRIVER, m_selectedDriver);
 			        startService(serviceIntent);
 				}
@@ -229,18 +230,18 @@ public class TestActivity extends Activity {
         startService(serviceIntent);
     }
     
-    private void setConnectPropertiesVisibility(boolean visible) {
-    	m_connectData.setVisibility(visible ? View.VISIBLE : View.GONE);
-    }
+//    private void setConnectPropertiesVisibility(boolean visible) {
+//    	m_connectData.setVisibility(visible ? View.VISIBLE : View.GONE);
+//    }
     
-    private void populateDriverBox(String[] keys, String[] displays) {
-    	m_driverAdapter.clear();
-    	m_driver_names = keys;
-    	m_driver_displaynames = displays;
-    	for(int i = 0; i < keys.length; i++)
-    		m_driverAdapter.add(displays[i]);
-    		
-    }
+//    private void populateDriverBox(String[] keys, String[] displays) {
+//    	m_driverAdapter.clear();
+//    	m_driver_names = keys;
+//    	m_driver_displaynames = displays;
+//    	for(int i = 0; i < keys.length; i++)
+//    		m_driverAdapter.add(displays[i]);
+//
+//    }
     
     @Override
     protected void onDestroy() {
@@ -262,7 +263,7 @@ public class TestActivity extends Activity {
 			
 			if (intent.getAction().equals(EVENT_REPORT_CONFIG)) {
 				Toast.makeText(TestActivity.this, "Bluez-IME version " + intent.getIntExtra(EVENT_REPORT_CONFIG_VERSION, 0), Toast.LENGTH_SHORT).show();				
-				populateDriverBox(intent.getStringArrayExtra(EVENT_REPORT_CONFIG_DRIVER_NAMES), intent.getStringArrayExtra(EVENT_REPORT_CONFIG_DRIVER_DISPLAYNAMES));
+//				populateDriverBox(intent.getStringArrayExtra(EVENT_REPORT_CONFIG_DRIVER_NAMES), intent.getStringArrayExtra(EVENT_REPORT_CONFIG_DRIVER_DISPLAYNAMES));
 			} else if (intent.getAction().equals(EVENT_REPORTSTATE)) {
 				m_connected = intent.getBooleanExtra(EVENT_REPORTSTATE_CONNECTED, false);
 				m_button.setText(m_connected ? R.string.bluezime_connected : R.string.bluezime_disconnected);
@@ -299,7 +300,7 @@ public class TestActivity extends Activity {
 				m_connected = false;
 			}
 			
-			setConnectPropertiesVisibility(!m_connected);			
+//			setConnectPropertiesVisibility(!m_connected);
 		}
 	};
 	
@@ -312,31 +313,31 @@ public class TestActivity extends Activity {
 				return;
 
 			if (intent.getAction().equals(EVENT_DIRECTIONALCHANGE)) {
-				int value = intent.getIntExtra(EVENT_DIRECTIONALCHANGE_VALUE, 0);
-				int direction = intent.getIntExtra(EVENT_DIRECTIONALCHANGE_DIRECTION, 100);
-
-				SeekBar sbar = null;
-				switch (direction) {
-					case 0:
-						sbar = m_axisX1;
-						break;
-					case 1:
-						sbar = m_axisY1;
-						break;
-					case 2:
-						sbar = m_axisX2;
-						break;
-					case 3:
-						sbar = m_axisY2;
-						break;
-				}
+//				int value = intent.getIntExtra(EVENT_DIRECTIONALCHANGE_VALUE, 0);
+//				int direction = intent.getIntExtra(EVENT_DIRECTIONALCHANGE_DIRECTION, 100);
+//
+//				SeekBar sbar = null;
+//				switch (direction) {
+//					case 0:
+//						sbar = m_axisX1;
+//						break;
+//					case 1:
+//						sbar = m_axisY1;
+//						break;
+//					case 2:
+//						sbar = m_axisX2;
+//						break;
+//					case 3:
+//						sbar = m_axisY2;
+//						break;
+//				}
 				
-				if (sbar != null) {
-					sbar.setProgress(Math.min(Math.max(0, 128 + value), sbar.getMax()));
-				}
-				else {
-					reportUnmatched(String.format(getString(R.string.unmatched_axis_event), direction + "", value + ""));
-				}
+//				if (sbar != null) {
+//					sbar.setProgress(Math.min(Math.max(0, 128 + value), sbar.getMax()));
+//				}
+//				else {
+//					reportUnmatched(String.format(getString(R.string.unmatched_axis_event), direction + "", value + ""));
+//				}
 				
 				
 			} else if (intent.getAction().equals(EVENT_KEYPRESS)) {
