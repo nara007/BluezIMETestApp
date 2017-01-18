@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/nara007/AndroidStudioProjects/BluezIMETestApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="586de036a21599de1a83515ad859af502d0b4b99">
+        <dex dex="/Users/nara007/AndroidStudioProjects/BluezIMETestApp/app/build/intermediates/pre-dexed/debug/instant-run_5c1fc1ebf63e41a7b61358865da7b26477b4f976.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nara007/AndroidStudioProjects/BluezIMETestApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="758fe18554237155f4c2b5bbffb9b9f142f5868b">
+        <dex dex="/Users/nara007/AndroidStudioProjects/BluezIMETestApp/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_1f3d165875ece4f280c98ce2a6132a44da7d487c.jar" />
+    </item>
+
+</items>
